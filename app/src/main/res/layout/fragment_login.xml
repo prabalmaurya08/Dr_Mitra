@@ -4,23 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
-
-    
-
-
+    tools:context=".Login"
+    android:background="@drawable/demo2"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="275dp"
+    android:orientation="vertical"
+    android:paddingTop="40dp"
+    android:layout_marginTop="20dp"
+    tools:ignore="MissingConstraints">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/img"
-        />
+        android:layout_height="221dp"
+        android:layout_marginBottom="0dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/doctors_img1"
+        tools:ignore="ContentDescription" />
 
 
-
+</LinearLayout>
 
 
 
