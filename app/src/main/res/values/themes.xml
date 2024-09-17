@@ -10,7 +10,7 @@
     <!-- Style for MaterialCardView with only top corners rounded -->
     <!-- Style for MaterialCardView with only top corners rounded -->
 
-    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+    <style name="CustomCardViewStyle" parent="Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
     </style>
 
