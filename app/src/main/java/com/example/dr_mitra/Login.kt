@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.dr_mitra.databinding.FragmentLoginBinding
 
 
 class Login : Fragment() {
+
+    private lateinit var binding: FragmentLoginBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +22,10 @@ class Login : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return binding.root
     }
 
 

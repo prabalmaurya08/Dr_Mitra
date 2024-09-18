@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <!-- Track color when the switch is checked (Doctor selected) -->
     <item android:state_checked="true">
         <shape android:shape="rectangle">
-            <solid android:color="#ffc" />
-            <corners android:radius="100dp" />
-            <stroke android:width="2dp" android:color="#3F276B" />
-            <size android:height="20dp" />
+            <solid android:color="#898955" />
+            <corners android:radius="20dp" />
         </shape>
     </item>
 
+    <!-- Track color when the switch is unchecked (Patient selected) -->
     <item android:state_checked="false">
-        <shape android:shape="oval">
-            <solid android:color="@color/white" />
-            <corners android:radius="100dp" />
-            <stroke android:width="2dp" android:color="#61724D" />
-            <size android:height="20dp" />
+        <shape android:shape="rectangle">
+            <solid android:color="#C6B8E0" />
+            <corners android:radius="20dp" />
         </shape>
     </item>
-
 </selector>
