@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onboarding.Onboarding_Screen2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/onboarding2">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/skip_button_onboarding2"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="457dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-20dp"
+        app:cardBackgroundColor="#C3D9F5"
+        app:cardCornerRadius="30dp"
+        tools:ignore="MissingConstraints,TextSizeCheck,VisualLintBounds">
+
+        <TextView
+            android:id="@+id/text_top_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/stay_on_top_of_your_well"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/being_with_quick_doctor_appointments_and_personalized_health_care"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+
+            />
+
+        <ImageView
+            android:id="@+id/frame_button_onboarding2"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="375dp"
+            android:src="@drawable/onbording_buttons2"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/previous_button_onboarding2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="377dp"
+            android:layout_marginEnd="100dp"
+            android:text="@string/prev"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/next_button_onboarding2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="377dp"
+            android:layout_marginEnd="35dp"
+            android:text="@string/next"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</RelativeLayout>
