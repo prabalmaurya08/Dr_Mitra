@@ -2,4 +2,15 @@
     <string name="app_name">Dr_Mitra</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_health_is_our_priority">Your Health is Our Priority</string>
+    <string name="book_appointments_easily_and_get_expert_care_at_your_convenience">book appointments easily and get expert care at your convenience</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="stay_on_top_of_your_well">Stay on top of your well</string>
+    <string name="being_with_quick_doctor_appointments_and_personalized_health_care">being with quick doctor appointments and personalized health care</string>
+    <string name="prev">Prev</string>
+    <string name="seamless_access_to_quality_care">Seamless access to quality care</string>
+    <string name="schedule_your_doctor_visits_with_just_a_few_taps">schedule your doctor visits with just a few taps</string>
+    <string name="expert_care_at_your_fingertips">Expert care at your fingertips</string>
+    <string name="connect_with_healthcare_professionals_anytime_anywhere">connect with healthcare professionals anytime, anywhere</string>
 </resources>

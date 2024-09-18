@@ -11,11 +11,13 @@
     android:layout_width="match_parent"
     android:layout_height="275dp"
     android:orientation="vertical"
-    android:paddingTop="40dp"
+    android:paddingTop="50dp"
     android:layout_marginTop="20dp"
+    app:layout_constraintBottom_toBottomOf="true"
     tools:ignore="MissingConstraints">
 
     <ImageView
+        android:id="@+id/image_bg_doctor"
         android:layout_width="match_parent"
         android:layout_height="221dp"
         android:layout_marginBottom="0dp"
