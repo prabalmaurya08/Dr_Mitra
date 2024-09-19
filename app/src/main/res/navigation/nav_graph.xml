@@ -16,24 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.dr_mitra.Login"
+        android:name="com.example.dr_mitra.login.Login"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_login_to_doctorLogin"
-            app:destination="@id/doctorLogin" />
-        <action
-            android:id="@+id/action_login_to_patientLogin"
-            app:destination="@id/patientLogin" />
-    </fragment>
-    <fragment
-        android:id="@+id/doctorLogin"
-        android:name="com.example.dr_mitra.doctor_login.DoctorLogin"
-        android:label="fragment_doctor_login"
-        tools:layout="@layout/fragment_doctor_login" />
-    <fragment
-        android:id="@+id/patientLogin"
-        android:name="com.example.dr_mitra.patient_login.PatientLogin"
-        android:label="fragment_patient_login"
-        tools:layout="@layout/fragment_patient_login" />
+        tools:layout="@layout/fragment_login" />
 </navigation>
