@@ -1,16 +1,14 @@
-package com.example.dr_mitra
+package com.example.dr_mitra.doctor_login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.dr_mitra.databinding.FragmentLoginBinding
+import com.example.dr_mitra.R
 
 
-class Login : Fragment() {
-
-    private lateinit var binding: FragmentLoginBinding
+class DoctorLogin : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +20,8 @@ class Login : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
-
         // Inflate the layout for this fragment
-        return binding.root
+        return inflater.inflate(R.layout.fragment_doctor_login, container, false)
     }
 
 
