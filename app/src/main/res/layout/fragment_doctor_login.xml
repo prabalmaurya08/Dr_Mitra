@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:backgroundTint="#ffc"
-    tools:context=".DoctorLogin">
+
+    android:background="#AEAE65"
+    tools:context=".doctor_login.DoctorLogin">
 
 
 
