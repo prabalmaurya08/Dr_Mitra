@@ -13,4 +13,6 @@
     <string name="schedule_your_doctor_visits_with_just_a_few_taps">schedule your doctor visits with just a few taps</string>
     <string name="expert_care_at_your_fingertips">Expert care at your fingertips</string>
     <string name="connect_with_healthcare_professionals_anytime_anywhere">connect with healthcare professionals anytime, anywhere</string>
+    <string name="patient">Patient</string>
+    <string name="doctor">Doctor</string>
 </resources>
