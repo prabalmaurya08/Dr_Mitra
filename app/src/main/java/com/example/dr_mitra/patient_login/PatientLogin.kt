@@ -1,13 +1,14 @@
-package com.example.dr_mitra
+package com.example.dr_mitra.patient_login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.dr_mitra.R
 
 
-class DoctorLogin : Fragment() {
+class PatientLogin : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +21,7 @@ class DoctorLogin : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_doctor_login, container, false)
+        return inflater.inflate(R.layout.fragment_patient_login, container, false)
     }
-
 
 }
