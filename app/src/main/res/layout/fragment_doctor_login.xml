@@ -102,9 +102,11 @@
         <TextView
             android:id="@+id/doctor_signup_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="Sign Up"
+            android:clickable="true"
             android:textColor="@color/green"
+            android:textStyle="bold"
             android:layout_marginStart="4dp"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -121,7 +123,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
-        android:layout_marginTop="12dp"
+
         android:text="or Continue with"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/constraint_signup"/>

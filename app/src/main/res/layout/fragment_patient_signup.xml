@@ -76,7 +76,7 @@
 
         android:background="@drawable/login_edit_text_bg"
         android:padding="16dp"
-        android:hint="Enter Name"
+        android:hint="Enter Email Address"
         app:layout_constraintTop_toBottomOf="@id/tv_patient_signup_email"/>
 
     <TextView
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/login_edit_text_bg"
         android:padding="16dp"
-        android:hint="Enter Name"
+        android:hint="Enter Password"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/tv_patient_signup_password" />
 <CheckBox
@@ -111,7 +111,7 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
 
         android:layout_marginTop="10dp"
 
@@ -127,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
         android:text="Conditions and the Privacy Policy."
 
 
@@ -139,6 +139,7 @@
         style="@style/patient_buttonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
 
 
         android:text="Register"
