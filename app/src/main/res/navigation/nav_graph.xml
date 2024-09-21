@@ -5,7 +5,6 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashScreen">
 
-    <!-- Splash Screen Fragment -->
     <fragment
         android:id="@+id/splashScreen"
         android:name="com.example.dr_mitra.splash_screen.SplashScreen"
@@ -14,14 +13,15 @@
         <action
             android:id="@+id/action_splashScreen_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_splashScreen_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
     </fragment>
-
-    <!-- Login Fragment (Parent of ViewPager) -->
     <fragment
         android:id="@+id/login"
         android:name="com.example.dr_mitra.login.Login"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login">
+        tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_patientLogin_to_patientSignup"
             app:destination="@id/patientSignup" />
@@ -61,8 +61,6 @@
             android:id="@+id/action_doctorSignup_to_login"
             app:destination="@id/login" />
     </fragment>
-
-    <!-- Patient Signup Fragment -->
     <fragment
         android:id="@+id/patientSignup"
         android:name="com.example.dr_mitra.patient_login.PatientSignup"
@@ -72,5 +70,23 @@
             android:id="@+id/action_patientSignup_to_login"
             app:destination="@id/login" />
     </fragment>
-
+    <fragment
+        android:id="@+id/doctorHomePage"
+        android:name="com.example.dr_mitra.doctorhome.DoctorHomePage"
+        android:label="fragment_doctor_home_page"
+        tools:layout="@layout/fragment_doctor_home_page" />
+    <fragment
+        android:id="@+id/patientHomePage"
+        android:name="com.example.dr_mitra.patienthome.PatientHomePage"
+        android:label="fragment_patient_home_page"
+        tools:layout="@layout/fragment_patient_home_page" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.dr_mitra.onboarding.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>
