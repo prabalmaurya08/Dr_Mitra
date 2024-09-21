@@ -6,16 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".onboarding.OnboardingFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/onboardingViewPager"
-        android:background="@drawable/onboarding_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+
 
 <!--    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator-->
 <!--        android:id="@+id/dots_indicator_dark"-->

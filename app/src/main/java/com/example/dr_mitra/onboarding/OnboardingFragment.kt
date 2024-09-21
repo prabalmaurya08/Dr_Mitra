@@ -29,7 +29,7 @@ private lateinit var binding: FragmentOnboardingBinding
        ),
            requireActivity().supportFragmentManager,lifecycle
        )
-       val onbordingViewPager = binding.onboardingViewPager
+       val onbordingViewPager = binding.onboardingViewPagerDark
         onbordingViewPager.adapter=onbordingItemAdapter
 
     }
