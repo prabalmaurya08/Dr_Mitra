@@ -5,26 +5,44 @@
     android:layout_height="match_parent"
     tools:context=".onboarding.Onboarding_Screen3"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/onboarding3">
+    android:background="#dbe6f8">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/onbording_img3"
+        tools:ignore="ContentDescription" />
+
     <TextView
+        android:id="@+id/skip_button_onboarding3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/skip"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginTop="15dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
-        android:id="@+id/skip_button_onboarding3"/>
-
+        android:text="@string/skip"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="RelativeOverlap" />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="457dp"
+        android:layout_below="@+id/imageView"
+
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-20dp"
-        app:cardBackgroundColor="#C3D9F5"
+
+        app:cardBackgroundColor="@color/light_blue"
         app:cardCornerRadius="30dp"
-        tools:ignore="MissingConstraints,TextSizeCheck,VisualLintBounds">
+
+        app:cardElevation="40dp"
+        tools:ignore="TextSizeCheck,TextSizeCheck">
 
         <TextView
             android:id="@+id/text_top_title3"
@@ -50,15 +68,6 @@
 
             />
 
-        <ImageView
-            android:id="@+id/frame_button_onboarding3"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="375dp"
-            android:src="@drawable/onbording_buttons3"
-            tools:ignore="ContentDescription" />
-
         <TextView
             android:id="@+id/previous_button_onboarding3"
             android:layout_width="wrap_content"
@@ -67,8 +76,11 @@
             android:layout_marginTop="377dp"
             android:layout_marginEnd="100dp"
             android:text="@string/prev"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+
         <TextView
             android:id="@+id/next_button_onboarding3"
             android:layout_width="wrap_content"
@@ -76,15 +88,11 @@
             android:layout_gravity="end"
             android:layout_marginTop="377dp"
             android:layout_marginEnd="35dp"
+
             android:text="@string/next"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
-
-
-
-
-
-
 </RelativeLayout>

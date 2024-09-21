@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_splashScreen_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_splashScreen_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
     </fragment>
     <fragment
         android:id="@+id/login"
@@ -60,4 +63,13 @@
         android:name="com.example.dr_mitra.patienthome.PatientHomePage"
         android:label="fragment_patient_home_page"
         tools:layout="@layout/fragment_patient_home_page" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.dr_mitra.onboarding.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>
