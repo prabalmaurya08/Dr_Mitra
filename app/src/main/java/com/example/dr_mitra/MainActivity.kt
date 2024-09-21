@@ -6,10 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.dr_mitra.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+import com.example.dr_mitra.databinding.ActivityMainBinding
+import com.example.dr_mitra.doctor_login.DoctorLogin
+import com.example.dr_mitra.patient_login.PatientLogin
+
+class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, DoctorLogin.OnSignupClickListener1 {
 
 
     private lateinit var binding: ActivityMainBinding
@@ -29,5 +33,13 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
+    }
+    override fun onPatientSignupClicked() {
+        // Navigate to Patient Signup Fragment
+        findNavController(R.id.fragment).navigate(R.id.action_patientLogin_to_patientSignup)
+    }
+    override fun onDoctorSignupClicked() {
+        // Navigate to Patient Signup Fragment
+        findNavController(R.id.fragment).navigate(R.id.action_doctorLogin_to_doctorSignup)
     }
 }

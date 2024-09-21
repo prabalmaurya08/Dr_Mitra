@@ -8,17 +8,21 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.example.dr_mitra.R
 import com.example.dr_mitra.databinding.FragmentLoginBinding
+import com.example.dr_mitra.patient_login.PatientLogin
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-class Login : Fragment() {
+class Login : Fragment(),PatientLogin.OnSignupClickListener{
 
     private lateinit var binding: FragmentLoginBinding
-private val tabTitles = arrayOf("Patient", "Doctor")
+    private val tabTitles = arrayOf("Patient", "Doctor")
     private lateinit var imageView: ImageView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +35,16 @@ private val tabTitles = arrayOf("Patient", "Doctor")
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         imageView = binding.loginImg
+
+
         viewPagerWithTabLayout()
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    override fun onPatientSignupClicked() {
+        // Navigate to the Patient Signup screen
+        findNavController().navigate(R.id.action_patientLogin_to_patientSignup)
     }
 
     private fun viewPagerWithTabLayout() {

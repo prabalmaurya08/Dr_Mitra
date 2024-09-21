@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashScreen">
 
+    <!-- Splash Screen Fragment -->
     <fragment
         android:id="@+id/splashScreen"
         android:name="com.example.dr_mitra.splash_screen.SplashScreen"
@@ -14,24 +15,43 @@
             android:id="@+id/action_splashScreen_to_login"
             app:destination="@id/login" />
     </fragment>
+
+    <!-- Login Fragment (Parent of ViewPager) -->
     <fragment
         android:id="@+id/login"
         android:name="com.example.dr_mitra.login.Login"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_login_to_doctorSignup"
-            app:destination="@id/doctorSignup" />
-        <action
-            android:id="@+id/action_login_to_patientSignup"
+            android:id="@+id/action_patientLogin_to_patientSignup"
             app:destination="@id/patientSignup" />
         <action
-            android:id="@+id/action_login_to_doctorHomePage"
-            app:destination="@id/doctorHomePage" />
-        <action
-            android:id="@+id/action_login_to_patientHomePage"
-            app:destination="@id/patientHomePage" />
+            android:id="@+id/action_doctorLogin_to_doctorSignup"
+            app:destination="@id/doctorSignup" />
     </fragment>
+
+
+    <!-- Patient Login Fragment -->
+    <fragment
+        android:id="@+id/patientLogin"
+        android:name="com.example.dr_mitra.patient_login.PatientLogin"
+        android:label="fragment_patient_login"
+        tools:layout="@layout/fragment_patient_login"/>
+        <!-- Action to navigate to Patient Signup Fragment -->
+
+
+
+    <!-- Doctor Login Fragment -->
+    <fragment
+        android:id="@+id/doctorLogin"
+        android:name="com.example.dr_mitra.doctor_login.DoctorLogin"
+        android:label="fragment_doctor_login"
+        tools:layout="@layout/fragment_doctor_login"/>
+        <!-- Action to navigate to Doctor Signup Fragment -->
+
+
+
+    <!-- Doctor Signup Fragment -->
     <fragment
         android:id="@+id/doctorSignup"
         android:name="com.example.dr_mitra.doctor_login.DoctorSignup"
@@ -41,6 +61,8 @@
             android:id="@+id/action_doctorSignup_to_login"
             app:destination="@id/login" />
     </fragment>
+
+    <!-- Patient Signup Fragment -->
     <fragment
         android:id="@+id/patientSignup"
         android:name="com.example.dr_mitra.patient_login.PatientSignup"
@@ -50,14 +72,5 @@
             android:id="@+id/action_patientSignup_to_login"
             app:destination="@id/login" />
     </fragment>
-    <fragment
-        android:id="@+id/doctorHomePage"
-        android:name="com.example.dr_mitra.doctorhome.DoctorHomePage"
-        android:label="fragment_doctor_home_page"
-        tools:layout="@layout/fragment_doctor_home_page" />
-    <fragment
-        android:id="@+id/patientHomePage"
-        android:name="com.example.dr_mitra.patienthome.PatientHomePage"
-        android:label="fragment_patient_home_page"
-        tools:layout="@layout/fragment_patient_home_page" />
+
 </navigation>
