@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#C3D9F5</color>
+    <color name="blue">#006FFD</color>
+    <color name="grey">#C5C6CC</color>
+    <color name="tv_color">#2F3036</color>
+    <color name="green">#50C878</color>
 </resources>

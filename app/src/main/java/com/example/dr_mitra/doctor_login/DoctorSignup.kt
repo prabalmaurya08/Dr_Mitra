@@ -1,4 +1,4 @@
-package com.example.dr_mitra.patient_login
+package com.example.dr_mitra.doctor_login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.dr_mitra.R
-import com.example.dr_mitra.databinding.FragmentPatientSignupBinding
+import com.example.dr_mitra.databinding.FragmentDoctorSignupBinding
 
 
-class PatientSignup : Fragment() {
-   private lateinit var binding: FragmentPatientSignupBinding
+class DoctorSignup : Fragment() {
+    private lateinit var binding: FragmentDoctorSignupBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,16 +23,18 @@ class PatientSignup : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentPatientSignupBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+        binding= FragmentDoctorSignupBinding.inflate(inflater, container, false)
+
         backToLogin()
+        // Inflate the layout for this fragment
         return binding.root
     }
     private fun backToLogin(){
-        val backButton=binding.signupPatientBack
+        val backButton=binding.signupDoctorBack
         backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_patientSignup_to_login)
+            findNavController().navigate(R.id.action_doctorSignup_to_login)
         }
     }
+
 
 }

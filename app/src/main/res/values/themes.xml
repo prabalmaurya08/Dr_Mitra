@@ -1,13 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Dr_Mitra" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Dr_Mitra" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/light_blue</item>
     </style>
 
     <style name="Theme.Dr_Mitra" parent="Base.Theme.Dr_Mitra" />
 
-    <!-- Style for MaterialCardView with only top corners rounded -->
+<!--    Login Page for patient and Doctor-->
     <!-- Style for MaterialCardView with only top corners rounded -->
 
     <style name="CustomCardViewStyle" parent="Widget.MaterialComponents.CardView">
@@ -22,4 +22,53 @@
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
+
+
+<!--    This is for login Page for patient and Doctor-->
+
+    <style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
+
+
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
+
+    </style>
+
+
+<!--    THis is for Doctor login page Button style-->
+    <style name="doctor_buttonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/green</item>
+
+        <item name="shapeAppearanceOverlay">@style/CustomButtonShape1</item>
+
+    </style>
+
+    <style name="CustomButtonShape1" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+        <item name="android:height">50dp</item>
+    </style>
+
+    
+<!--    This is patient login page Button style-->
+
+    <style name="patient_buttonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/blue</item>
+
+        <item name="shapeAppearanceOverlay">@style/CustomButtonShape2</item>
+
+    </style>
+
+    <style name="CustomButtonShape2" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+
+
+
+
+
+
+
 </resources>
