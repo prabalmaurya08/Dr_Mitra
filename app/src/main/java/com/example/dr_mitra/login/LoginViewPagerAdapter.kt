@@ -2,8 +2,8 @@ package com.example.dr_mitra.login
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.dr_mitra.doctor_login.DoctorLogin
-import com.example.dr_mitra.patient_login.PatientLogin
+import com.example.dr_mitra.doctor.doctorlogin.DoctorLogin
+import com.example.dr_mitra.patient.patientlogin.PatientLogin
 
 class LoginViewPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
 

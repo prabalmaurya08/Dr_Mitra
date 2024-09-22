@@ -31,7 +31,9 @@ class SplashScreen : Fragment() {
 
         Handler(Looper.getMainLooper())
             .postDelayed({
-                findNavController().navigate(R.id.action_splashScreen_to_onboardingFragment)
+               // findNavController().navigate(R.id.action_splashScreen_to_onboardingFragment)
+               // findNavController().navigate(R.id.action_splashScreen_to_patientHomePage)
+                findNavController().navigate(R.id.action_splashScreen_to_login)
             },3000)
 
         // Inflate the layout for this fragment
