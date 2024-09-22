@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="24dp"
-    tools:context=".patient_login.PatientSignup">
+    tools:context=".patient.patientlogin.PatientSignup">
 
     <ImageView
         android:id="@+id/signup_patient_back"
@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/signupPatientButton"
         style="@style/patient_buttonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.dr_mitra.doctor_login
+package com.example.dr_mitra.doctor.doctorlogin
 
 import android.content.Context
 import android.os.Bundle

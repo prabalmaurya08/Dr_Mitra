@@ -7,7 +7,7 @@
 
 
 
-    tools:context=".doctor_login.DoctorLogin">
+    tools:context=".doctor.doctorlogin.DoctorLogin">
 
     <TextView
         android:id="@+id/login_email_tv"
