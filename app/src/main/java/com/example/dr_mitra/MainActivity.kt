@@ -13,7 +13,7 @@ import com.example.dr_mitra.databinding.ActivityMainBinding
 import com.example.dr_mitra.doctor.doctorlogin.DoctorLogin
 import com.example.dr_mitra.patient.patientlogin.PatientLogin
 
-class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, PatientLogin.OnLoginSuccessListener, DoctorLogin.OnSignupClickListener1 {
+class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, DoctorLogin.OnSignupClickListener1 {
 
 
     private lateinit var binding: ActivityMainBinding
@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, Pa
         // Navigate to Patient Signup Fragment
         findNavController(R.id.fragment).navigate(R.id.action_Login_to_patientSignup)
 
+    }
+    override fun onDoctorLoginSuccess() {
+        // Navigate to the Doctor Home Screen
+        findNavController(R.id.fragment).navigate(R.id.action_login_to_doctorHomePage)
     }
     override fun onPatientLoginSuccess() {
 
