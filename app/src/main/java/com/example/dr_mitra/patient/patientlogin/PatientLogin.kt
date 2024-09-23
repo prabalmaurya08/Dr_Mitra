@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 
 import com.example.dr_mitra.databinding.FragmentPatientLoginBinding
-import com.example.dr_mitra.login.LoginViewModal
+import com.example.dr_mitra.userLogin.LoginViewModal
 import com.google.firebase.auth.FirebaseAuth
 
 
