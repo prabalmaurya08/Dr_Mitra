@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.dr_mitra.login.Login"
+        android:name="com.example.dr_mitra.userLogin.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
