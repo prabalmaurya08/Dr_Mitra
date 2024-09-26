@@ -102,4 +102,18 @@
         android:name="com.example.dr_mitra.doctor.doctorhome.DoctorHomePage"
         android:label="fragment_doctor_home_page"
         tools:layout="@layout/fragment_doctor_home_page" />
+    <fragment
+        android:id="@+id/patientProfile"
+        android:name="com.example.dr_mitra.patient.patienthome.patientprofile.PatientProfile"
+        android:label="fragment_patient_profile"
+        tools:layout="@layout/fragment_patient_profile" />
+    <fragment
+        android:id="@+id/patientDashboard"
+        android:name="com.example.dr_mitra.patient.patienthome.patientdashboard.PatientDashboard"
+        android:label="fragment_patient_dashboard"
+        tools:layout="@layout/fragment_patient_dashboard" >
+        <action
+            android:id="@+id/action_patientDashboard_to_patientProfile"
+            app:destination="@id/patientProfile" />
+    </fragment>
 </navigation>

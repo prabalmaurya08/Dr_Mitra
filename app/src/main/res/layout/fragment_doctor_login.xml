@@ -90,13 +90,14 @@
         <TextView
             android:id="@+id/Not_a_member_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:text="Not a member?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/doctor_signup_tv"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/doctor_signup_tv" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Second TextView (Sign Up) -->
         <TextView
@@ -108,7 +109,8 @@
             android:textColor="@color/green"
             android:textStyle="bold"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/Not_a_member_tv"
             app:layout_constraintEnd_toEndOf="parent"/>
