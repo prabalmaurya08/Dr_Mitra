@@ -10,8 +10,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 
 import com.example.dr_mitra.databinding.ActivityMainBinding
-import com.example.dr_mitra.doctor_login.DoctorLogin
-import com.example.dr_mitra.patient_login.PatientLogin
+import com.example.dr_mitra.doctor.doctorlogin.DoctorLogin
+import com.example.dr_mitra.patient.patientlogin.PatientLogin
 
 class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, DoctorLogin.OnSignupClickListener1 {
 
@@ -36,10 +36,23 @@ class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, Do
     }
     override fun onPatientSignupClicked() {
         // Navigate to Patient Signup Fragment
-        findNavController(R.id.fragment).navigate(R.id.action_patientLogin_to_patientSignup)
+        findNavController(R.id.fragment).navigate(R.id.action_Login_to_patientSignup)
+
     }
+    override fun onDoctorLoginSuccess() {
+        // Navigate to the Doctor Home Screen
+        findNavController(R.id.fragment).navigate(R.id.action_login_to_doctorHomePage)
+    }
+    override fun onPatientLoginSuccess() {
+
+        // Navigate to the Patient Home Screen
+        findNavController(R.id.fragment).navigate(R.id.action_login_to_patientHomePage)
+    }
+
+
     override fun onDoctorSignupClicked() {
         // Navigate to Patient Signup Fragment
         findNavController(R.id.fragment).navigate(R.id.action_doctorLogin_to_doctorSignup)
+
     }
 }

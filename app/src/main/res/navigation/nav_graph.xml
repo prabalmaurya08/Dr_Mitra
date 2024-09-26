@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashScreen">
+    app:startDestination="@id/login">
+
+
+    
 
     <fragment
         android:id="@+id/splashScreen"
@@ -13,30 +16,35 @@
         <action
             android:id="@+id/action_splashScreen_to_login"
             app:destination="@id/login" />
-        <action
-            android:id="@+id/action_splashScreen_to_onboardingFragment"
-            app:destination="@id/onboardingFragment" />
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.dr_mitra.login.Login"
+        android:name="com.example.dr_mitra.userLogin.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_patientLogin_to_patientSignup"
+            android:id="@+id/action_Login_to_patientSignup"
             app:destination="@id/patientSignup" />
         <action
             android:id="@+id/action_doctorLogin_to_doctorSignup"
             app:destination="@id/doctorSignup" />
+        <action
+            android:id="@+id/action_login_to_patientHomePage"
+            app:destination="@id/patientHomePage" />
+        <action
+            android:id="@+id/action_login_to_doctorHomePage"
+            app:destination="@id/doctorHomePage" />
     </fragment>
 
 
     <!-- Patient Login Fragment -->
     <fragment
         android:id="@+id/patientLogin"
-        android:name="com.example.dr_mitra.patient_login.PatientLogin"
+        android:name="com.example.dr_mitra.patient.patientlogin.PatientLogin"
         android:label="fragment_patient_login"
-        tools:layout="@layout/fragment_patient_login"/>
+        tools:layout="@layout/fragment_patient_login">
+
+    </fragment>
         <!-- Action to navigate to Patient Signup Fragment -->
 
 
@@ -44,7 +52,7 @@
     <!-- Doctor Login Fragment -->
     <fragment
         android:id="@+id/doctorLogin"
-        android:name="com.example.dr_mitra.doctor_login.DoctorLogin"
+        android:name="com.example.dr_mitra.doctor.doctorlogin.DoctorLogin"
         android:label="fragment_doctor_login"
         tools:layout="@layout/fragment_doctor_login"/>
         <!-- Action to navigate to Doctor Signup Fragment -->
@@ -54,7 +62,7 @@
     <!-- Doctor Signup Fragment -->
     <fragment
         android:id="@+id/doctorSignup"
-        android:name="com.example.dr_mitra.doctor_login.DoctorSignup"
+        android:name="com.example.dr_mitra.doctor.doctorlogin.DoctorSignup"
         android:label="fragment_doctor_signup"
         tools:layout="@layout/fragment_doctor_signup" >
         <action
@@ -63,23 +71,13 @@
     </fragment>
     <fragment
         android:id="@+id/patientSignup"
-        android:name="com.example.dr_mitra.patient_login.PatientSignup"
+        android:name="com.example.dr_mitra.patient.patientlogin.PatientSignup"
         android:label="fragment_patient_signup"
         tools:layout="@layout/fragment_patient_signup" >
         <action
             android:id="@+id/action_patientSignup_to_login"
             app:destination="@id/login" />
     </fragment>
-    <fragment
-        android:id="@+id/doctorHomePage"
-        android:name="com.example.dr_mitra.doctorhome.DoctorHomePage"
-        android:label="fragment_doctor_home_page"
-        tools:layout="@layout/fragment_doctor_home_page" />
-    <fragment
-        android:id="@+id/patientHomePage"
-        android:name="com.example.dr_mitra.patienthome.PatientHomePage"
-        android:label="fragment_patient_home_page"
-        tools:layout="@layout/fragment_patient_home_page" />
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.example.dr_mitra.onboarding.OnboardingFragment"
@@ -89,4 +87,19 @@
             android:id="@+id/action_onboardingFragment_to_login"
             app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/patientHomePage"
+        android:name="com.example.dr_mitra.patient.patienthome.PatientHomePage"
+        android:label="fragment_patient_home_page"
+        tools:layout="@layout/fragment_patient_home_page" >
+        <action
+            android:id="@+id/action_patientHomePage_to_login"
+            app:destination="@id/login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctorHomePage"
+        android:name="com.example.dr_mitra.doctor.doctorhome.DoctorHomePage"
+        android:label="fragment_doctor_home_page"
+        tools:layout="@layout/fragment_doctor_home_page" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.dr_mitra.login
+package com.example.dr_mitra.userLogin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,15 +8,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
 import com.example.dr_mitra.R
 import com.example.dr_mitra.databinding.FragmentLoginBinding
-import com.example.dr_mitra.patient_login.PatientLogin
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-class Login : Fragment(),PatientLogin.OnSignupClickListener{
+class Login : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
     private val tabTitles = arrayOf("Patient", "Doctor")
@@ -42,10 +40,15 @@ class Login : Fragment(),PatientLogin.OnSignupClickListener{
         return binding.root
     }
 
-    override fun onPatientSignupClicked() {
-        // Navigate to the Patient Signup screen
-        findNavController().navigate(R.id.action_patientLogin_to_patientSignup)
-    }
+//    override fun onPatientSignupClicked() {
+//        // Navigate to the Patient Signup screen
+//        findNavController().navigate(R.id.action_patientLogin_to_patientSignup)
+//    }
+//
+
+//    override fun onPatientLoginButtonClicked() {
+//        findNavController().navigate(R.id.action_patientLogin_to_patientHomePage)
+//    }
 
     private fun viewPagerWithTabLayout() {
         binding.loginViewPager.adapter = LoginViewPagerAdapter(this)

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
-    tools:context=".doctor_login.DoctorSignup">
+    tools:context=".doctor.doctorlogin.DoctorSignup">
 
 
 
@@ -146,6 +146,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv3" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/doctor_signup_button"
         style="@style/patient_buttonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

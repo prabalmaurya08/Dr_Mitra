@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".login.Login">
+    tools:context=".userLogin.Login">
 
     <!-- Top LinearLayout containing the Image -->
     <LinearLayout
