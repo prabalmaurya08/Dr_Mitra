@@ -15,7 +15,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <!-- CollapsingToolbarLayout for app bar content -->
-            <com.google.android.material.appbar.CollapsingToolbarLayout
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/patient_dashboard_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp">
@@ -46,7 +47,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:contentDescription="Notifications Icon"
                     android:src="@drawable/ic_notification_icon" />
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
 

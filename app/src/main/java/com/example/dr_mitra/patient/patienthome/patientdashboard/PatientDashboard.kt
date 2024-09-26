@@ -1,8 +1,10 @@
 package com.example.dr_mitra.patient.patienthome.patientdashboard
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -18,6 +20,8 @@ class PatientDashboard : Fragment() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
 
+    private lateinit var toggle: ActionBarDrawerToggle
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,38 +35,50 @@ class PatientDashboard : Fragment() {
     ): View? {
         binding= FragmentPatientDashboardBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
-        return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         drawerLayout=binding.patientDrawerLayout
         navView=binding.patientNavigationView
-        navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.profile->{
-                    findNavController().navigate(R.id.action_patientDashboard_to_patientProfile)
-                    true
-                }
-                else->{
-                    true
-                }
 
-            }
+        drawerSetUp()
+        return binding.root
+    }
+
+     private fun drawerSetUp() {
+
+         toggle = ActionBarDrawerToggle(
+             requireActivity(),
+             drawerLayout,
+             R.string.navigation_drawer_open,
+             R.string.navigation_drawer_close
+         )
+         drawerLayout.addDrawerListener(toggle)
+         toggle.syncState()
+
+
+
+//        navView.setNavigationItemSelectedListener {menuItem->
+//            when(menuItem.itemId){
+//
+//
+//            }
+//        }
+
+
+
+
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        toggle.onConfigurationChanged(newConfig)
+    }
+    @Deprecated("Deprecated in Java")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
         }
-
-
-        // Set up action bar toggle for opening/closing the drawer
-        val toggle = ActionBarDrawerToggle(
-            requireActivity(),
-            drawerLayout,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
+        return super.onOptionsItemSelected(item)
     }
 
 
