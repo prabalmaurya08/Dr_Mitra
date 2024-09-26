@@ -20,7 +20,7 @@ class PatientLogin : Fragment() {
 
 
     private var listener: OnSignupClickListener? = null
-    private var listener2: OnLoginSuccessListener?=null
+
 
 
 
@@ -37,9 +37,7 @@ class PatientLogin : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         when (context) {
-            is OnLoginSuccessListener -> {
-                listener2 = context
-            }
+
             is OnSignupClickListener -> {
                 listener=context
 
@@ -93,7 +91,7 @@ class PatientLogin : Fragment() {
                             // Notify MainActivity that login was successful
                            //
 
-                            listener2?.onPatientLoginSuccess()
+                            listener?.onPatientLoginSuccess()
 
 
 
@@ -129,13 +127,12 @@ class PatientLogin : Fragment() {
         }
 
     }
-    interface OnLoginSuccessListener {
-        fun onPatientLoginSuccess()
-    }
+
 
 
     interface OnSignupClickListener {
         fun onPatientSignupClicked()
+        fun onPatientLoginSuccess()
 
 
 
