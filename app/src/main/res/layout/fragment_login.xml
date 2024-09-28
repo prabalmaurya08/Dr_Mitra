@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/login_img"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:paddingTop="10dp"
             android:src="@drawable/patient_img"
             tools:ignore="ContentDescription" />
@@ -29,7 +29,10 @@
         style="@style/CustomCardViewStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/login_ll">
+        android:layout_below="@id/login_ll"
+        android:elevation="13dp"
+        android:backgroundTint="#F0F0F0"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

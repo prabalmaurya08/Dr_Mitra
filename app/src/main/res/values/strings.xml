@@ -19,4 +19,7 @@
     <string name="get_started">Get Started</string>
     <string name="navigation_drawer_open">navigation_drawer_open\n</string>
     <string name="navigation_drawer_close">navigation_drawer_close\n</string>
+    <string name="star_passwords">******</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
 </resources>
