@@ -15,4 +15,8 @@
     <string name="connect_with_healthcare_professionals_anytime_anywhere">connect with healthcare professionals anytime, anywhere</string>
     <string name="patient">Patient</string>
     <string name="doctor">Doctor</string>
+    <string name="your_health_is_our_priority1">Your health is our priority</string>
+    <string name="get_started">Get Started</string>
+    <string name="navigation_drawer_open">navigation_drawer_open\n</string>
+    <string name="navigation_drawer_close">navigation_drawer_close\n</string>
 </resources>

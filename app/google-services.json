@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719497782040",
+    "project_id": "drmitra-5b043",
+    "storage_bucket": "drmitra-5b043.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719497782040:android:70b58362ab9b611777f46d",
+        "android_client_info": {
+          "package_name": "com.example.dr_mitra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm3JzxHLKXVyJey0q9TjMeiwlIOJCtV78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
