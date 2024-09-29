@@ -17,7 +17,7 @@ class PatientViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragmen
     override fun createFragment(position: Int): Fragment {
         // Return the appropriate fragment for each position
         return when (position) {
-            0 -> PatientAppointment()
+            0 -> PatientDashboard()
 
             1 -> PatientAppointment()
 
