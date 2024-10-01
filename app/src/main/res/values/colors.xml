@@ -6,5 +6,7 @@
     <color name="blue">#006FFD</color>
     <color name="grey">#C5C6CC</color>
     <color name="tv_color">#2F3036</color>
+    <color name="tab_bg">#8F9098</color>
     <color name="green">#50C878</color>
+    <color name="text_bg">#2291FF</color>
 </resources>

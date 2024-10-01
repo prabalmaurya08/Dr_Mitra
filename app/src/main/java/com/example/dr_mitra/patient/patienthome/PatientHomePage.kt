@@ -1,14 +1,21 @@
 package com.example.dr_mitra.patient.patienthome
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+
 import android.view.View
 import android.view.ViewGroup
+
+import androidx.appcompat.app.ActionBarDrawerToggle
+
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dr_mitra.R
 import com.example.dr_mitra.databinding.FragmentPatientHomePageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 
 class PatientHomePage : Fragment() {
@@ -17,6 +24,14 @@ class PatientHomePage : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPagerAdapter: PatientViewPagerAdapter
+
+
+
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
+
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +54,53 @@ class PatientHomePage : Fragment() {
 
         // Link ViewPager and BottomNavigationView
         setupViewPagerWithBottomNavigation()
+
+
+
+
+        // Set up Navigation Drawer
+        drawerLayout = binding.patientDrawerLayout
+        navView = binding.patientNavigationView
+
+        // Set up the toolbar and drawer toggle
+        toolbar = binding.patientHomeToolbar
+        drawerSetUp()
         return binding.root
     }
+
+    private fun drawerSetUp() {
+
+        toggle = ActionBarDrawerToggle(
+            requireActivity(),
+            drawerLayout,
+           binding.patientHomeToolbar, // Set the toolbar
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+
+
+//        navView.setNavigationItemSelectedListener {menuItem->
+//            when(menuItem.itemId){
+//
+//
+//            }
+//        }
+
+
+
+
+    }
+
+
+//    override fun onConfigurationChanged(newConfig: Configuration) {
+//        super.onConfigurationChanged(newConfig)
+//        toggle.onConfigurationChanged(newConfig)
+//    }
+
+
 
     private fun setupViewPagerWithBottomNavigation() {
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {

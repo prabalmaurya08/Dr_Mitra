@@ -30,14 +30,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/login_ll"
+
         android:elevation="13dp"
-        android:backgroundTint="#F0F0F0"
+        android:backgroundTint="@color/white"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="15dp">
+            android:layout_marginHorizontal="16dp"
+            >
 
             <!-- TextView -->
             <TextView
@@ -46,18 +48,25 @@
                 android:layout_height="wrap_content"
                 android:text="Welcome"
                 android:textStyle="bold"
+                android:fontFamily="@font/inter_semibold"
                 android:textSize="24sp"
                 android:textColor="@color/tv_color"
-                android:layout_marginStart="20dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
 
             <!-- TabLayout for login (Patient/Doctor) -->
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/login_tabLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+
+
+                android:background="@drawable/login_tab_stroke_bg"
 
                 app:tabGravity="center"
                 android:layout_marginTop="10dp"
