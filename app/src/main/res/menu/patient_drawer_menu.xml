@@ -2,4 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item android:id="@+id/profile"
     android:title="Profile"/>
+    <item android:id="@+id/calender"
+        android:title="Calender"/>
+    <item android:id="@+id/appointments"
+        android:title="Appointments"/>
+    <item android:id="@+id/doctors"
+    android:title="Doctors"/>
+    <item android:id="@+id/medical_report"
+        android:title="Medical Reports"/>
+    <item android:id="@+id/payment_history"
+        android:title="Payment History"/>
+    <item android:id="@+id/setting"
+        android:title="Settings"/>
+    <item android:id="@+id/logout"
+        android:title="LogOut"/>
+    <item android:id="@+id/invite_friend"
+        android:title="Invite Friends"/>
+
+
+
+
+
 </menu>

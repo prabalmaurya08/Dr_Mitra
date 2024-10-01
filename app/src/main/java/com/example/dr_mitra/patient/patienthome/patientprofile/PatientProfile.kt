@@ -30,30 +30,30 @@ class PatientProfile : Fragment() {
         binding= FragmentPatientProfileBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
 
-        viewModel= ViewModelProvider(this)[PatientProfileViewModal::class.java]
-
-        binding.patientProfileEditButton.setOnClickListener{
-            findNavController().navigate(R.id.action_patientHomePage_to_patientEditProfile)
-        }
+//        viewModel= ViewModelProvider(this)[PatientProfileViewModal::class.java]
+//
+//        binding.patientProfileEditButton.setOnClickListener{
+//            findNavController().navigate(R.id.action_patientHomePage_to_patientEditProfile)
+//        }
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        viewModel.getPatientProfile()
-        viewModel.patientProfile.observe(viewLifecycleOwner) { profile ->
-            if (profile != null) {
-                binding.patientProfileName.text = profile.name
-                binding.patientProfileAge.text = profile.age.toString()
-                binding.patientSugarLevel.text=profile.sugarLevel
-                binding.patientSleepTime.text=profile.sleepTime
-//                binding.patientProfileGender.text = profile.
-//                binding.patientProfileDisease.text = profile.disease
-            }
-            }
-
-
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        viewModel.getPatientProfile()
+//        viewModel.patientProfile.observe(viewLifecycleOwner) { profile ->
+//            if (profile != null) {
+//                binding.patientProfileName.text = profile.name
+//                binding.patientProfileAge.text = profile.age.toString()
+//                binding.patientSugarLevel.text=profile.sugarLevel
+//                binding.patientSleepTime.text=profile.sleepTime
+////                binding.patientProfileGender.text = profile.
+////                binding.patientProfileDisease.text = profile.disease
+//            }
+//            }
+//
+//
+//    }
 
 }

@@ -6,49 +6,6 @@
 
 
 
-        <!-- AppBarLayout for toolbar and collapsing features -->
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <!-- CollapsingToolbarLayout for app bar content -->
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/patient_dashboard_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp">
-
-                <!-- Drawer Icon -->
-                <ImageButton
-                    android:id="@+id/drawer_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start|center_vertical"
-                    android:contentDescription="Drawer Icon"
-                    android:src="@drawable/ic_drawer_icon" />
-
-                <!-- Title TextView -->
-                <TextView
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text="Home"
-                    android:textSize="20sp" />
-
-                <!-- Notification Icon -->
-                <ImageButton
-                    android:id="@+id/notification_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end|center_vertical"
-                    android:contentDescription="Notifications Icon"
-                    android:src="@drawable/ic_notification_icon" />
-            </androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.AppBarLayout>
 
 
 

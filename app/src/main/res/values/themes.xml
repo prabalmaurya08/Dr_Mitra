@@ -30,8 +30,12 @@
     <style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
 
 
-        <item name="tabPaddingStart">0dp</item>
-        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabPaddingStart">2dp</item>
+        <item name="tabPaddingEnd">2dp</item>
+        <item name="tabPaddingTop">2dp</item>
+        <item name="tabPaddingBottom">2dp</item>
+
+
 
     </style>
 

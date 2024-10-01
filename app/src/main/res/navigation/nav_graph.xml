@@ -123,4 +123,9 @@
             android:id="@+id/action_patientEditProfile_to_patientProfile"
             app:destination="@id/patientProfile" />
     </fragment>
+    <fragment
+        android:id="@+id/patientDashboard"
+        android:name="com.example.dr_mitra.patient.patienthome.patientdashboard.PatientDashboard"
+        android:label="fragment_patient_dashboard"
+        tools:layout="@layout/fragment_patient_dashboard" />
 </navigation>
