@@ -24,6 +24,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/patient_home_toolbar">
+                <ImageButton
+                    android:id="@+id/patient_drawer_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_drawer_icon"
+                    android:backgroundTint="@android:color/transparent"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

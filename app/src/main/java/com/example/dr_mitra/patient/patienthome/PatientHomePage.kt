@@ -1,12 +1,12 @@
 package com.example.dr_mitra.patient.patienthome
 
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 import androidx.appcompat.app.ActionBarDrawerToggle
 
@@ -31,7 +31,9 @@ class PatientHomePage : Fragment() {
     private lateinit var navView: NavigationView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
-    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var drawerButton: ImageButton
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,23 +64,27 @@ class PatientHomePage : Fragment() {
         drawerLayout = binding.patientDrawerLayout
         navView = binding.patientNavigationView
 
-        // Set up the toolbar and drawer toggle
+        // Set up the toolbar and drawer Button
         toolbar = binding.patientHomeToolbar
+        drawerButton = binding.patientDrawerButton
         drawerSetUp()
         return binding.root
     }
 
     private fun drawerSetUp() {
+        drawerButton.setOnClickListener {
+            drawerLayout.open()
+        }
 
-        toggle = ActionBarDrawerToggle(
-            requireActivity(),
-            drawerLayout,
-           binding.patientHomeToolbar, // Set the toolbar
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+//        toggle = ActionBarDrawerToggle(
+//            requireActivity(),
+//            drawerLayout,
+//           binding.patientHomeToolbar, // Set the toolbar
+//            R.string.navigation_drawer_open,
+//            R.string.navigation_drawer_close
+//        )
+//        drawerLayout.addDrawerListener(toggle)
+//        toggle.syncState()
 
 
 
@@ -112,7 +118,7 @@ class PatientHomePage : Fragment() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_nav_dashboard -> viewPager.currentItem = 0
-                R.id.bottom_nav_appointment -> viewPager.currentItem = 1
+                R.id.bottom_nav_search -> viewPager.currentItem = 1
                 R.id.bottom_nav_chat -> viewPager.currentItem = 2
                 R.id.bottom_nav_profile -> viewPager.currentItem = 3
             }

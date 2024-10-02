@@ -2,7 +2,7 @@ package com.example.dr_mitra.patient.patienthome
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.dr_mitra.patient.patienthome.patientappointment.PatientAppointment
+import com.example.dr_mitra.patient.patienthome.patientsearchdoctor.PatientSearchDoctor
 import com.example.dr_mitra.patient.patienthome.patientchat.PatientChat
 import com.example.dr_mitra.patient.patienthome.patientdashboard.PatientDashboard
 import com.example.dr_mitra.patient.patienthome.patientprofile.PatientProfile
@@ -19,7 +19,7 @@ class PatientViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragmen
         return when (position) {
             0 -> PatientDashboard()
 
-            1 -> PatientAppointment()
+            1 -> PatientSearchDoctor()
 
             2 -> PatientChat()
             3 -> PatientProfile()
