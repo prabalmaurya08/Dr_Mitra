@@ -1,32 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
-
+<group android:id="@+id/group1">
     <item android:id="@+id/profile"
-            android:icon="@drawable/calendar"
-            android:title="Profile"/>
+        android:icon="@drawable/calendar"
+        android:title="Profile"/>
+</group>
 
-            <item android:id="@+id/calender"
-                android:title="Calender"/>
 
-    <item android:id="@+id/appointments"
-        android:title="Appointments"/>
+
+    <group android:id="@+id/group2">
+        <item android:id="@+id/calender"
+            android:title="Calender"/>
+    </group>
+
+
+    <group android:id="@+id/group3">
+        <item android:id="@+id/appointments"
+            android:title="Appointments"/>
+    </group>
+
+    <group android:id="@+id/group4">
 
         <item android:id="@+id/doctors"
             android:title="Doctors"/>
+    </group>
 
 
+
+    <group android:id="@+id/group5">
         <item android:id="@+id/medical_report"
             android:title="Medical Reports"/>
+    </group>
 
-    <item android:id="@+id/payment_history"
-        android:title="Payment History"/>
-    <item android:id="@+id/setting"
-        android:title="Settings"/>
-    <item android:id="@+id/logout"
-        android:title="LogOut"/>
-    <item android:id="@+id/invite_friend"
-        android:title="Invite Friends"/>
+
+
+    <group android:id="@+id/group6">
+        <item android:id="@+id/payment_history"
+            android:title="Payment History"/>
+    </group>
+
+    <group android:id="@+id/group7">
+        <item android:id="@+id/setting"
+            android:title="Settings"/>
+    </group>
+    <group android:id="@+id/group8">
+        <item android:id="@+id/logout"
+            android:title="LogOut"/>
+    </group>
+
+    <group android:id="@+id/group9">
+        <item android:id="@+id/invite_friend"
+            android:title="Invite Friends"/>
+    </group>
+
 
 
 
