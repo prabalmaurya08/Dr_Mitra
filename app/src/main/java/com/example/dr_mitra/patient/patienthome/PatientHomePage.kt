@@ -120,7 +120,7 @@ class PatientHomePage : Fragment() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_nav_dashboard -> viewPager.currentItem = 0
-                R.id.bottom_nav_appointment -> viewPager.currentItem = 1
+                R.id.bottom_nav_search -> viewPager.currentItem = 1
                 R.id.bottom_nav_chat -> viewPager.currentItem = 2
                 R.id.bottom_nav_profile -> viewPager.currentItem = 3
             }
