@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/g1">
+        <item android:id="@+id/profile"
+            android:title="Profile"/>
+    </group>
+    <group android:id="@+id/g2">
+        <item android:id="@+id/calender"
+            android:title="Calender"/>
+    </group>
+    <group android:id="@+id/g3">
+        <item android:id="@+id/appointments"
+            android:title="Appointments"/>
+    </group>
+    <group android:id="@+id/g4">
+        <item android:id="@+id/patients"
+            android:title="Patients"/>
+    </group>
+    <group android:id="@+id/g5">
+        <item android:id="@+id/payment_history"
+            android:title="Payment History"/>
+    </group>
+
+    <group android:id="@+id/g6">
+        <item android:id="@+id/setting"
+            android:title="Settings"/>
+    </group>
+
+    <group android:id="@+id/g7">
+        <item android:id="@+id/logout"
+            android:title="LogOut"/>
+    </group>
+
+    <group android:id="@+id/g9">
+        <item android:id="@+id/invite_friend"
+            android:title="Invites Friends"/>
+    </group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</menu>
