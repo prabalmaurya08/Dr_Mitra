@@ -6,8 +6,16 @@
     <color name="blue">#006FFD</color>
     <color name="grey">#C5C6CC</color>
     <color name="tv_color">#2F3036</color>
+
     <color name="tab_bg">#8F9098</color>
     <color name="green">#50C878</color>
     <color name="text_bg">#2291FF</color>
     <color name="red">#FF0B00</color>
+
+    <color name="cancelled">#797979</color>
+    <color name="emergency">#FF0B00</color>
+    <color name="attended">#00C7F2</color>
+    <color name="rescheduled">#F7A23B</color>
+    <color name="confirmed">#0FCA7A</color>
+    <color name="pending">#FBC62F</color>
 </resources>
