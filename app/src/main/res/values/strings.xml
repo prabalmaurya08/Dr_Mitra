@@ -31,4 +31,10 @@
     <string name="_500">500</string>
     <string name="consultation_fee">Consultation Fee</string>
     <string name="book_appointment">Book Appointment</string>
+    <string name="senior_doctor">Senior Doctor</string>
+    <string name="cardiologist">Cardiologist</string>
+    <string name="gender_male">Gender : Male</string>
+    <string name="id_marcuschar2024">id- marcuschar2024</string>
+    <string name="_5_years">5 years</string>
+    <string name="medanta_hospital">Medanta Hospital</string>
 </resources>
