@@ -1,11 +1,8 @@
 package com.example.dr_mitra.mainUser
 
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 class UserRepository {
@@ -57,6 +54,8 @@ class UserRepository {
         return result
 
     }
+
+
     private fun saveDoctorProfile(doctorId: String, user: User) {
         val doctorData = hashMapOf(
 
@@ -72,6 +71,87 @@ class UserRepository {
         )
 
 
+        //Saving Data to Patient Profile
         firestore.collection("patientProfiles").document(patientId).set(patientData)
+    }
+
+
+    fun getPatientProfile(): LiveData<User> {
+        val result = MutableLiveData<User>()
+        val userId = auth.currentUser?.uid ?: ""
+
+        firestore.collection("patientProfiles").document(userId)
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val userProfile = document.toObject(User::class.java)
+                    if (userProfile != null) {
+                        result.postValue(userProfile!!) // Post the user profile
+                    } else {
+                        result.postValue(User()) // Return a default User object if null
+                    }
+                } else {
+                    result.postValue(User()) // Return a default User object if document does not exist
+                }
+            }
+            .addOnFailureListener {
+                result.postValue(User()) // Return a default User object on failure
+            }
+
+        return result
+    }
+
+
+
+
+
+     fun savePatientProfileAfterLogin(
+         phone: String,
+         age: Int,
+         sugarLevel: String,
+         sleepTime: String,
+         bio: String,
+         gender:String
+                                           //  weight: Double,
+                                            // height: Double,
+                                           //  bloodGroup: String,
+                                           //  bloodPressure: String,
+                                            // heartRate: String
+                                            ):LiveData<Boolean>{
+        val result = MutableLiveData<Boolean>()
+        val userId = auth.currentUser?.uid ?: ""
+
+        val patientProfileData = hashMapOf(
+            "phone" to phone,
+            "age" to age,
+            "sugarLevel" to sugarLevel,
+            "sleepTime" to sleepTime,
+            "bio" to bio,
+            "gender" to gender,
+//            "basicInfo" to mapOf(
+//                "weight" to weight,
+//                "height" to height,
+//                "bloodGroup" to bloodGroup
+//            ),
+//            "medicalDetails" to mapOf(
+//                "bloodPressure" to bloodPressure,
+//                "heartRate" to heartRate
+//            ),
+            "medicalHistory" to listOf("No serious conditions"),
+            "appointments" to listOf("No appointments scheduled")
+        )
+
+        // Save Patient Profile data in Firestore under userId
+                firestore.collection("patientProfiles").document(userId).set(patientProfileData)
+                    .addOnSuccessListener {
+                        result.postValue(true)
+                    }
+                    .addOnFailureListener {
+                        result.postValue(false)
+                    }
+
+        return result
+
+
     }
 }

@@ -38,6 +38,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -52,6 +53,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,4 +62,12 @@ dependencies {
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+
+    implementation(libs.circleimageview)
+
+    // ImageSlider library
+
+
+    implementation(libs.imageslideshow)
+
 }

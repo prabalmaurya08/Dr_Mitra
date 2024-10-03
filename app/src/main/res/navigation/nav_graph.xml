@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_patientHomePage_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_patientHomePage_to_patientEditProfile"
+            app:destination="@id/patientEditProfile" />
     </fragment>
 
     <fragment
@@ -102,4 +105,27 @@
         android:name="com.example.dr_mitra.doctor.doctorhome.DoctorHomePage"
         android:label="fragment_doctor_home_page"
         tools:layout="@layout/fragment_doctor_home_page" />
+    <fragment
+        android:id="@+id/patientProfile"
+        android:name="com.example.dr_mitra.patient.patienthome.patientprofile.PatientProfile"
+        android:label="fragment_patient_profile"
+        tools:layout="@layout/fragment_patient_profile" >
+        <action
+            android:id="@+id/action_patientProfile_to_patientEditProfile"
+            app:destination="@id/patientEditProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientEditProfile"
+        android:name="com.example.dr_mitra.patient.patienthome.patientprofile.PatientEditProfile"
+        android:label="fragment_patient_edit_profile"
+        tools:layout="@layout/fragment_patient_edit_profile" >
+        <action
+            android:id="@+id/action_patientEditProfile_to_patientProfile"
+            app:destination="@id/patientProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientDashboard"
+        android:name="com.example.dr_mitra.patient.patienthome.patientdashboard.PatientDashboard"
+        android:label="fragment_patient_dashboard"
+        tools:layout="@layout/fragment_patient_dashboard" />
 </navigation>

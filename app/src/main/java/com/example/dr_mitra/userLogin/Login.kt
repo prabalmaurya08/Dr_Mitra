@@ -19,6 +19,7 @@ class Login : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private val tabTitles = arrayOf("Patient", "Doctor")
     private lateinit var imageView: ImageView
+    private lateinit var loginTab: TabLayout
 
 
 
@@ -33,6 +34,8 @@ class Login : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         imageView = binding.loginImg
+
+        loginTab = binding.loginTabLayout
 
 
         viewPagerWithTabLayout()
@@ -77,13 +80,17 @@ class Login : Fragment() {
                         0 -> ContextCompat.getDrawable(
                             requireContext(),
                             R.drawable.login_patient_select
+
+
                         )
+
 
                         else -> ContextCompat.getDrawable(
                             requireContext(),
                             R.drawable.login_doctor_select
                         )
                     }
+                    updateTabBg(position)
                     updateImageViewForTab(position)
                 }
             }
@@ -111,9 +118,15 @@ class Login : Fragment() {
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+
             }
         })
+    }
+    private fun updateTabBg(position: Int){
+        when(position){
+            0 -> loginTab.setBackgroundResource(R.drawable.login_tab_stroke_bg)
+            else -> loginTab.setBackgroundResource(R.drawable.login_doc_stroke)
+        }
     }
     private fun updateImageViewForTab(position: Int) {
         when (position) {
