@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <item android:id="@+id/bottom_nav_dashboard"
     android:title="Dashboard"
-    android:icon="@drawable/calendar"/>
+    android:icon="@drawable/green_dashboard_icon"/>
 
     <item android:id="@+id/bottom_nav_appointment"
         android:title="Appointments"
-        android:icon="@drawable/calendar"/>
+        android:icon="@drawable/search_icon"/>
     <item android:id="@+id/bottom_nav_chats"
         android:title="Chats"
-        android:icon="@drawable/calendar"/>
+        android:icon="@drawable/chat_icon"/>
     <item android:id="@+id/bottom_nav_profile"
         android:title="Profile"
-        android:icon="@drawable/calendar"/>
+        android:icon="@drawable/user_profil_icon"/>
 
 
 </menu>
