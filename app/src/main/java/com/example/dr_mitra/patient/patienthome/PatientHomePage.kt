@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.SearchView
 
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager2.widget.ViewPager2
@@ -24,6 +25,7 @@ class PatientHomePage : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPagerAdapter: PatientViewPagerAdapter
+
 
 
 
@@ -118,7 +120,7 @@ class PatientHomePage : Fragment() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_nav_dashboard -> viewPager.currentItem = 0
-                R.id.bottom_nav_search -> viewPager.currentItem = 1
+                R.id.bottom_nav_appointment -> viewPager.currentItem = 1
                 R.id.bottom_nav_chat -> viewPager.currentItem = 2
                 R.id.bottom_nav_profile -> viewPager.currentItem = 3
             }
