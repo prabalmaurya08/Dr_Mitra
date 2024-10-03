@@ -83,7 +83,7 @@ class DoctorLogin : Fragment() {
             }else{
                 Toast.makeText(requireContext(),"Please enter email and password",Toast.LENGTH_SHORT).show()
             }
-            doctorLoginViewModel.loginResult.observe(viewLifecycleOwner){ it ->
+            doctorLoginViewModel.loginResult.observe(viewLifecycleOwner){it ->
 
                 //Processing bar
                 // Hide the login button and show the ProgressBar
