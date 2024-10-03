@@ -22,4 +22,13 @@
     <string name="star_passwords">******</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="login">Login</string>
+    <string name="_4_7">4.7</string>
+    <string name="general_doctor_5years_exp">General Doctor (5years Exp)</string>
+    <string name="doctor_name">Doctor Name</string>
+    <string name="_2_4km">2.4KM</string>
+    <string name="_56_deva_rd_khand_2_matiyari_chinhat_lucknow_uttar_pradesh_226028"><![CDATA[56, Deva Rd, Khand -2, Matiyari, Chinhat, Lucknow, Uttar Pradesh - 226028]]></string>
+    <string name="rs">Rs.</string>
+    <string name="_500">500</string>
+    <string name="consultation_fee">Consultation Fee</string>
+    <string name="book_appointment">Book Appointment</string>
 </resources>
