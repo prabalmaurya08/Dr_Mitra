@@ -31,4 +31,25 @@
     <string name="_500">500</string>
     <string name="consultation_fee">Consultation Fee</string>
     <string name="book_appointment">Book Appointment</string>
+    <string name="senior_doctor">Senior Doctor</string>
+    <string name="cardiologist">Cardiologist</string>
+    <string name="gender_male">Gender : Male</string>
+    <string name="id_marcuschar2024">id- marcuschar2024</string>
+    <string name="_5_years">5 years</string>
+    <string name="medanta_hospital">Medanta Hospital</string>
+    <string name="on_board">On Board</string>
+    <string name="abcd_gali_lucknow_220001">abcd gali,Lucknow 220001</string>
+    <string name="abcd_gmail_com">abcd@gmail.com</string>
+    <string name="_91_888888888">+91-888888888</string>
+    <string name="address">ADDRESS</string>
+    <string name="email_id">EMAIL ID</string>
+    <string name="phone">PHONE</string>
+    <string name="contacts">Contacts</string>
+    <string name="if_your_custom_cardview_is_still_showing_on_top_of_the_drawer_it_might_be_due_to_how_the_navigationview_handles_its_layout_internally_by_default_the_navigationview_does_not_support_adding_custom_views_below_the_menu_items_unless_handled_carefully">If your custom CardView is still showing on top of the drawer, it might be due to how the NavigationView handles its layout internally. By default, the NavigationView does not support adding custom views below the menu items unless handled carefully</string>
+    <string name="bio">Bio</string>
+    <string name="submit">Submit</string>
+    <string name="doctor_position">Doctor Position</string>
+    <string name="doctor_specification">Doctor Specification</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
 </resources>
