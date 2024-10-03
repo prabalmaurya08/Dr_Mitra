@@ -70,4 +70,7 @@ dependencies {
 
     implementation(libs.imageslideshow)
 
+    //for Chart
+    implementation(libs.mpandroidchart)
+
 }

@@ -7,7 +7,7 @@
 
 
     <item
-        android:id="@+id/bottom_nav_appointment"
+        android:id="@+id/bottom_nav_search"
         android:icon="@drawable/search_icon"
         android:title="Search"/>
 
