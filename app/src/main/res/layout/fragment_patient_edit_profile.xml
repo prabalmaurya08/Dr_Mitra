@@ -12,6 +12,7 @@
        android:layout_height="wrap_content"
 
        >
+
        <ImageButton
            android:id="@+id/back_button"
            android:layout_width="50dp"
@@ -21,7 +22,8 @@
            android:paddingStart="5dp"
            android:src="@drawable/back_button"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent" />
+           app:layout_constraintTop_toTopOf="parent"
+           tools:ignore="SpeakableTextPresentCheck" />
 
 
        <de.hdodenhof.circleimageview.CircleImageView

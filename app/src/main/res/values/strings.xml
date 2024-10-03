@@ -47,4 +47,9 @@
     <string name="contacts">Contacts</string>
     <string name="if_your_custom_cardview_is_still_showing_on_top_of_the_drawer_it_might_be_due_to_how_the_navigationview_handles_its_layout_internally_by_default_the_navigationview_does_not_support_adding_custom_views_below_the_menu_items_unless_handled_carefully">If your custom CardView is still showing on top of the drawer, it might be due to how the NavigationView handles its layout internally. By default, the NavigationView does not support adding custom views below the menu items unless handled carefully</string>
     <string name="bio">Bio</string>
+    <string name="submit">Submit</string>
+    <string name="doctor_position">Doctor Position</string>
+    <string name="doctor_specification">Doctor Specification</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
 </resources>
