@@ -2,37 +2,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/g1">
         <item android:id="@+id/profile"
+            android:icon="@drawable/menu_doctor_icon"
             android:title="Profile"/>
     </group>
     <group android:id="@+id/g2">
         <item android:id="@+id/calender"
+            android:icon="@drawable/menu_calander_icon"
             android:title="Calender"/>
     </group>
     <group android:id="@+id/g3">
         <item android:id="@+id/appointments"
+            android:icon="@drawable/menu_appointment_icon"
             android:title="Appointments"/>
     </group>
     <group android:id="@+id/g4">
         <item android:id="@+id/patients"
+            android:icon="@drawable/menu_profile_icon"
             android:title="Patients"/>
     </group>
     <group android:id="@+id/g5">
         <item android:id="@+id/payment_history"
+            android:icon="@drawable/menu_payment_history_icon"
             android:title="Payment History"/>
     </group>
 
     <group android:id="@+id/g6">
         <item android:id="@+id/setting"
+            android:icon="@drawable/menu_setting_icon"
             android:title="Settings"/>
     </group>
 
     <group android:id="@+id/g7">
         <item android:id="@+id/logout"
+            android:icon="@drawable/menu_log_out_icon"
             android:title="LogOut"/>
     </group>
 
     <group android:id="@+id/g9">
         <item android:id="@+id/invite_friend"
+            android:icon="@drawable/menu_invite_friends_icon"
             android:title="Invites Friends"/>
     </group>
 
