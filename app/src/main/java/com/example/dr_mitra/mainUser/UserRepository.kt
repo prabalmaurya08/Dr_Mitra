@@ -76,8 +76,8 @@ class UserRepository {
     }
 
 
-    fun getPatientProfile(): LiveData<User> {
-        val result = MutableLiveData<User>()
+    fun getPatientProfile(): MutableLiveData<User?> {
+        val result = MutableLiveData<User?>()
         val userId = auth.currentUser?.uid ?: ""
 
         firestore.collection("patientProfiles").document(userId)
@@ -86,7 +86,7 @@ class UserRepository {
                 if (document != null) {
                     val userProfile = document.toObject(User::class.java)
                     if (userProfile != null) {
-                        result.postValue(userProfile!!) // Post the user profile
+                        result.postValue(userProfile) // Post the user profile
                     } else {
                         result.postValue(User()) // Return a default User object if null
                     }

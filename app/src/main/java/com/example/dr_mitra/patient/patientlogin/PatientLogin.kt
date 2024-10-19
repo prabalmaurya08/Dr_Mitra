@@ -98,7 +98,7 @@ class PatientLogin : Fragment() {
                 Toast.makeText(requireContext(),"Please enter email and password",Toast.LENGTH_SHORT).show()
             }
 
-            patientLoginViewModel.loginResult.observe(viewLifecycleOwner){
+            patientLoginViewModel.loginResult.observe(viewLifecycleOwner){ it ->
                 // Hide the login button and show the ProgressBar
                 binding.patientLoginButton.visibility = View.GONE
                 binding.progressBar.visibility = View.VISIBLE
