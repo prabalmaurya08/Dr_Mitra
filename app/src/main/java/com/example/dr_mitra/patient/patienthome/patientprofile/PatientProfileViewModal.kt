@@ -10,7 +10,7 @@ import com.example.dr_mitra.mainUser.UserRepository
 import kotlinx.coroutines.launch
 
 class PatientProfileViewModal(application: Application) : AndroidViewModel(application) {
-    private val profileRepository= UserRepository()
+    private val profileRepository= PatientProfileRepository()
     //for inserting
     private val _saveProfileResult = MutableLiveData<Boolean>()
     val saveProfileResult: LiveData<Boolean> get() = _saveProfileResult
@@ -18,23 +18,31 @@ class PatientProfileViewModal(application: Application) : AndroidViewModel(appli
     //for retrieving
     private val _patientProfile = MutableLiveData<User>()
     val patientProfile: LiveData<User> get() = _patientProfile
+    //for retrieving
+    private val _patientEmailName = MutableLiveData<User>()
+    val patientEmailName: LiveData<User> get() = _patientEmailName
 
 
 
 
-    fun savePatientProfile(phone: String,
+    fun savePatientProfile(
+        address: String,
+        phone: String,
                            age: Int,
                            sugarLevel: String,
                            sleepTime: String,
                            bio: String,
                            gender: String,
-                           //weight: Double,
-                           //height: Double,
+                           weight: String,
+                           height: String,
+                           bloodGroup: String,
+                           bloodPressure: String,
+                           disease: String
     ):LiveData<Boolean> {
         viewModelScope.launch {
 
             val resultLiveData =
-                profileRepository.savePatientProfileAfterLogin(phone, age, sugarLevel, sleepTime,gender, bio)
+                profileRepository.savePatientProfileAfterLogin(address, phone, age, sugarLevel, sleepTime, bio, gender, weight, height, bloodGroup, bloodPressure, disease)
 
             // Observe the LiveData from the repository and update the _saveProfileResult accordingly
             resultLiveData.observeForever { isSuccess ->
@@ -43,6 +51,17 @@ class PatientProfileViewModal(application: Application) : AndroidViewModel(appli
 
         }
         return saveProfileResult
+    }
+
+    fun getEmailName(){
+        viewModelScope.launch {
+            val resultLiveData = profileRepository.getEmailName()
+
+            // Observe the LiveData from the repository and update the _patientProfile accordingly
+            resultLiveData.observeForever { userEmailName ->
+                _patientEmailName.postValue(userEmailName)
+            }
+        }
     }
 
 

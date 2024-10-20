@@ -30,30 +30,47 @@ class PatientProfile : Fragment() {
         binding= FragmentPatientProfileBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
 
-//        viewModel= ViewModelProvider(this)[PatientProfileViewModal::class.java]
-//
-//        binding.patientProfileEditButton.setOnClickListener{
-//            findNavController().navigate(R.id.action_patientHomePage_to_patientEditProfile)
-//        }
+        viewModel= ViewModelProvider(this)[PatientProfileViewModal::class.java]
+
+        binding.patientProfileFloatingButton.setOnClickListener{
+            findNavController().navigate(R.id.action_patientHomePage_to_patientEditProfile)
+        }
         return binding.root
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        viewModel.getPatientProfile()
-//        viewModel.patientProfile.observe(viewLifecycleOwner) { profile ->
-//            if (profile != null) {
-//                binding.patientProfileName.text = profile.name
-//                binding.patientProfileAge.text = profile.age.toString()
-//                binding.patientSugarLevel.text=profile.sugarLevel
-//                binding.patientSleepTime.text=profile.sleepTime
-////                binding.patientProfileGender.text = profile.
-////                binding.patientProfileDisease.text = profile.disease
-//            }
-//            }
-//
-//
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getPatientProfile()
+        viewModel.getEmailName()
+        viewModel.patientEmailName.observe(viewLifecycleOwner) { emailName ->
+            if (emailName != null) {
+                binding.patientProfileEmail.text = emailName.email
+                binding.patientProfileName.text = emailName.name
+            }
+        }
+        viewModel.patientProfile.observe(viewLifecycleOwner) { profile ->
+            if (profile != null) {
+            //    binding.patientProfileName.text = profile.name
+                binding.patientProfileAge.text = profile.age.toString()
+                binding.patientProfileAddress.text = profile.address
+                binding.patientProfilePhoneNumber.text = profile.phone
+                binding.patientProfileSugarLevel.text=profile.sugarLevel
+                binding.patientProfileSleepingHour.text=profile.sleepTime
+                binding.patientProfileGender.text = profile.gender
+                binding.patientProfileDisease.text = profile.disease
+                binding.patientProfileBio.text = profile.bio
+                binding.patientProfileBloodGroup.text = profile.bloodGroup
+                binding.patientProfileBloodPressure.text = profile.bloodPressure
+                binding.patientProfileWeight.text = profile.weight.toString()
+                binding.patientProfileHeight.text = profile.height.toString()
+
+
+
+            }
+            }
+
+
+    }
 
 }

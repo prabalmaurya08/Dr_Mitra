@@ -2,6 +2,7 @@ package com.example.dr_mitra.patient.patientlogin
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.InputType
@@ -72,6 +73,7 @@ class PatientLogin : Fragment() {
         goToPatientSignup()
 
         auth = FirebaseAuth.getInstance()
+        setupObservers()
         patientLogin()
 
 
@@ -79,78 +81,59 @@ class PatientLogin : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
+    private fun setupObservers() {
+        // Observe login result here instead of inside the click listener
+        patientLoginViewModel.loginResult.observe(viewLifecycleOwner) { result ->
+            handleLoginResult(result)
+        }
+    }
 
 
 
-    private fun patientLogin(){
+
+
+    private fun handleLoginResult(result: Result<String>) {
+        // Hide progress bar and enable UI elements after login
+        binding.progressBar.visibility = View.GONE
+        binding.patientLoginButton.isEnabled = true
+        binding.patientLoginEmail.isEnabled = true
+        binding.patientLoginPassword.isEnabled = true
+
+        result.onSuccess { userId ->
+            // Handle success
+            patientLoginViewModel.getUserRole(userId).observe(viewLifecycleOwner) { userRole ->
+                if (userRole == "patient") {
+                    Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    listener?.onPatientLoginSuccess()
+                    saveLoginSession(requireContext())
+                } else {
+                    Toast.makeText(requireContext(), "This account does not belong to a patient", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }.onFailure {
+            // Handle failure
+            Toast.makeText(requireContext(), "Login Failed: ${it.message}", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun patientLogin() {
         binding.patientLoginButton.setOnClickListener {
-
-
             val email = binding.patientLoginEmail.text.toString().trim()
             val password = binding.patientLoginPassword.text.toString().trim()
 
-            if (email.isNotEmpty() && password.isNotEmpty()){
-
-
-                patientLoginViewModel.login(email,password)
-
-            }else{
-                Toast.makeText(requireContext(),"Please enter email and password",Toast.LENGTH_SHORT).show()
-            }
-
-            patientLoginViewModel.loginResult.observe(viewLifecycleOwner){
-                // Hide the login button and show the ProgressBar
-                binding.patientLoginButton.visibility = View.GONE
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                // Show progress bar and disable UI elements
                 binding.progressBar.visibility = View.VISIBLE
-
-                // Optionally, disable inputs to prevent further interaction
+                binding.patientLoginButton.isEnabled = false
                 binding.patientLoginEmail.isEnabled = false
                 binding.patientLoginPassword.isEnabled = false
 
-                // Start a coroutine for the 5-second delay
-                loginScope.launch {
-                    delay(5000) // 5000 milliseconds = 5 seconds
-
-                    // Simulate login success and navigate to the next activity
-                    binding.progressBar.visibility = View.GONE
-                    binding.patientLoginButton.visibility = View.VISIBLE
-
-                    // Re-enable inputs
-                    binding.patientLoginEmail.isEnabled = true
-                    binding.patientLoginPassword.isEnabled = true
-
-                    // Proceed to the next activity or perform desired navigation
-                    listener?.onPatientLoginSuccess()
-                }
-
-
-                it.onSuccess {userId->
-                    patientLoginViewModel.getUserRole(userId).observe(viewLifecycleOwner){userRole->
-                        if(userRole=="patient"){
-                            Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
-                            // Notify MainActivity that login was successful
-                           //
-
-                            listener?.onPatientLoginSuccess()
-
-                        }
-                        else{
-                            Toast.makeText(requireContext(), "This Account Does not belong to Patient", Toast.LENGTH_SHORT).show()
-                        }
-
-                        }
-
-
-                }.onFailure {
-                    Toast.makeText(requireContext(), "Login Failed: ${it.message}", Toast.LENGTH_SHORT).show()
-                }
-
-
+                patientLoginViewModel.login(email, password)
+            } else {
+                Toast.makeText(requireContext(), "Please enter email and password", Toast.LENGTH_SHORT).show()
             }
-            // Notify the parent fragment to handle the navigation
-
         }
     }
+
 
 
 
@@ -165,6 +148,14 @@ class PatientLogin : Fragment() {
         }
 
     }
+
+    private fun saveLoginSession(context: Context) {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putBoolean("isLoggedIn", true)  // Save the login status
+        editor.apply()
+    }
+
 
 
     @SuppressLint("ClickableViewAccessibility")
