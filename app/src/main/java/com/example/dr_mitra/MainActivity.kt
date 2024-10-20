@@ -1,5 +1,7 @@
 package com.example.dr_mitra
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -36,7 +38,20 @@ class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, Do
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+//        if(isPatientLoggedIn(this)) {
+//            // Navigate to the Patient Home Screen
+//            findNavController(R.id.fragment).navigate(R.id.action_login_to_patientHomePage)
+//        }
+
+
     }
+
+
+
+
+
+
     override fun onPatientSignupClicked() {
         // Navigate to Patient Signup Fragment
         findNavController(R.id.fragment).navigate(R.id.action_Login_to_patientSignup)
@@ -47,9 +62,15 @@ class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, Do
         findNavController(R.id.fragment).navigate(R.id.action_login_to_doctorHomePage)
     }
     override fun onPatientLoginSuccess() {
+        saveLoginSessionForPatient(this)
+
+
+            findNavController(R.id.fragment).navigate(R.id.action_login_to_patientHomePage)
+
+
 
         // Navigate to the Patient Home Screen
-        findNavController(R.id.fragment).navigate(R.id.action_login_to_patientHomePage)
+
     }
 
 
@@ -58,4 +79,18 @@ class MainActivity : AppCompatActivity(), PatientLogin.OnSignupClickListener, Do
         findNavController(R.id.fragment).navigate(R.id.action_doctorLogin_to_doctorSignup)
 
     }
-}
+    // Function to check if a patient is logged in
+     private fun isPatientLoggedIn(context: Context): Boolean {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("isPatientLoggedIn", false)  // Use appropriate key
+    }
+
+    
+    }
+    private fun saveLoginSessionForPatient(context: Context) {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putBoolean("isPatientLoggedIn", true)
+        editor.apply()
+    }
+

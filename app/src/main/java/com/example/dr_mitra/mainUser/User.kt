@@ -12,7 +12,8 @@ data class User(
     val experience: Int? = null, // Doctor's experience in years
     val timeSlot: String? = null, // Available time slots
     val contactNumber: String? = null, // Doctor's contact number
-
+    val address: String? = null, // Doctor's address
+    val disease: String? = null, // Doctor's district
     // Patient-specific fields
     val phone: String? = null, // Patient's phone number
     val age: Int? = null,
@@ -20,8 +21,8 @@ data class User(
     val sleepTime: String? = null,
     val gender: String? = null,
     val bio: String? = null, // Patient's bio
-    val weight: Double? = null,
-    val height: Double? = null,
+    val weight: String? = null,
+    val height: String? = null,
     val bloodGroup: String? = null,
     val bloodPressure: String? = null,
     val heartRate: String? = null,
