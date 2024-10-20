@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.dr_mitra.R
 import com.example.dr_mitra.databinding.FragmentPatientEditProfileBinding
 
@@ -36,12 +37,16 @@ class PatientEditProfile : Fragment() {
 
         // Fetch and populate existing patient profile data
         viewModel.getPatientProfile()
+        viewModel.getEmailName()
+
         observePatientProfile()
 
         //calling function
 
         binding.patientEditProfileSubmitButton.setOnClickListener {
             savePatientProfile()
+           // findNavController().navigate(R.id.action_patientEditProfile_to_patientProfile)
+            findNavController().popBackStack()
         }
 
 
@@ -58,6 +63,7 @@ class PatientEditProfile : Fragment() {
 
 
         // Get user inputs
+        val address = binding.patientEditProfileAddress.text.toString()
         val phone = binding.patientEditProfilePhoneNumber.text.toString()
         val age = binding.patientEditProfileAge.text.toString().toIntOrNull() ?: 0
         val sleepTime = binding.patientEditProfileSleepingHour.text.toString()
@@ -65,8 +71,14 @@ class PatientEditProfile : Fragment() {
         val bio=binding.patientEditProfileBio.text.toString()
         val gender = binding.patientEditProfileGenderSpinner.selectedItem.toString() // Get selected gender
 
+        val weight = binding.patientEditProfileWeight.text.toString()
+        val height = binding.patientEditProfileHeight.text.toString()
+        val bloodGroup = binding.patientEditProfileBloodGroup.text.toString()
+        val bloodPressure = binding.patientEditProfileBloodpressure.text.toString()
+        val disease = binding.patientEditProfileDisease.text.toString()
+
         // Call the ViewModel to save the profile
-        viewModel.savePatientProfile(phone, age, sugarLevel, sleepTime, gender,bio) // "Normal" for sugar level, update as needed
+        viewModel.savePatientProfile(address,phone, age, sugarLevel, sleepTime,bio,gender, weight, height, bloodGroup, bloodPressure, disease ) // "Normal" for sugar level, update as needed
 
 
         viewModel.saveProfileResult.observe(viewLifecycleOwner) { isSuccess ->
@@ -88,6 +100,12 @@ class PatientEditProfile : Fragment() {
     }
 
     private fun observePatientProfile() {
+        viewModel.patientEmailName.observe(viewLifecycleOwner) { emailName ->
+            if (emailName != null) {
+                binding.patientEditProfileName.text = emailName.email
+                binding.patientEditProfileEmail.text = emailName.name
+            }
+        }
         viewModel.patientProfile.observe(viewLifecycleOwner) { user ->
             user?.let {
                 // Populate the EditText fields with existing data
@@ -95,13 +113,22 @@ class PatientEditProfile : Fragment() {
                 binding.patientEditProfileAge.setText(it.age.toString())
                 binding.patientEditProfileSleepingHour.setText(it.sleepTime) // Ensure you have a corresponding EditText
                 binding.patientEditProfileSugarLevel.setText(it.sugarLevel)
+                binding.patientEditProfileBio.setText(it.bio)
+                binding.patientEditProfileAddress.setText(it.address)
+              //  binding.patientEditProfileGenderSpinner.setSelection(genders.indexOf(it.gender))
+                binding.patientEditProfileWeight.setText(it.weight.toString())
+                binding.patientEditProfileHeight.setText(it.height.toString())
+                binding.patientEditProfileBloodGroup.setText(it.bloodGroup)
+                binding.patientEditProfileBloodpressure.setText(it.bloodPressure)
+                binding.patientEditProfileDisease.setText(it.disease)
 
-                // Set the selected gender in the spinner
-//                val genderPosition = (binding.patientEditProfileGenderSpinner.adapter as ArrayAdapter<String>).getPosition(it.)
-//                binding.patientEditProfileGenderSpinner.setSelection(genderPosition)
+
+
+
             }
         }
     }
+
 
 
 

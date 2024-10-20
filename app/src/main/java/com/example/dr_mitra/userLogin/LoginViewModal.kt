@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.dr_mitra.mainUser.User
 import kotlinx.coroutines.launch
 
 class LoginViewModal(application: Application):AndroidViewModel(application){
@@ -19,6 +20,7 @@ class LoginViewModal(application: Application):AndroidViewModel(application){
 
         }
     }
+
     fun getUserRole(userId: String): LiveData<String> {
         return repository.getUserRole(userId)
 

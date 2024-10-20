@@ -12,6 +12,8 @@ class PatientSignUpViewModal(application: Application) : AndroidViewModel(applic
     val signupResult: LiveData<Boolean> = MutableLiveData()
 
 
+
+
     fun signUpPatient(patientUser: User) {
         patientRepository.signUpUser(patientUser).observeForever {
             (signupResult as MutableLiveData).postValue(it)
